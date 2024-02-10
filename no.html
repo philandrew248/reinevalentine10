@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./no_style.css">
+    <style>
+        .image_container img {
+            max-width: 70%; /* Set maximum width to 100% */
+            max-height: 80vh; /* Set maximum height to 80% of viewport height */
+            display: block; /* Ensure the image is displayed as a block element */
+            margin: 0 auto; /* Center the image horizontally */
+        }
+
+        /* Specific styling for spongebob9.jpg */
+        .image_container img[src="spongebob9.jpg"] {
+            max-width: 40%; /* Set maximum width for spongebob9.jpg */
+            max-height: 50%; /* Set maximum height for spongebob9.jpg */
+        }
+    
+        .image_container img[src="spongebob12.jpg"] {
+            max-width: 40%; /* Set maximum width for spongebob9.jpg */
+            max-height: 50%; /* Set maximum height for spongebob9.jpg */
+        }
+
+    
+        .image_container img[src="spongebob5.jpg"] {
+            max-width: 40%; /* Set maximum width for spongebob9.jpg */
+            max-height: 50%; /* Set maximum height for spongebob9.jpg */
+        }
+
+        .image_container img[src="spongebob4.jpg"] {
+            max-width: 30%; /* Set maximum width for spongebob9.jpg */
+            max-height: 30%; /* Set maximum height for spongebob9.jpg */
+        }
+
+        .image_container img[src="spongebob14.jpg"] {
+            max-width: 40%; /* Set maximum width for spongebob9.jpg */
+            max-height: 50%; /* Set maximum height for spongebob9.jpg */
+        }
+    </style>
+    <script>
+        var currentIndex = 0;
+        var jpgUrls = [
+            "spongebob5.jpg",
+            "spongebob12.jpg",
+            "spongebob9.jpg",
+            "spongebob4.jpg",
+            "spongebob14.jpg"
+        ];
+
+        var headerTexts = [
+            "Hey",
+            "Fucking weird as fuck",
+            "Also not gonna sit around all day waiting for a response so I'd say 30 mins is enough",
+            "K I swear to fucking GODDD that if you don't respond to me in 30 mins I swear you're not gonna like me at all",
+            "Nevermind... sorry i got so upset and that we didn't work"
+        ];
+
+        function changeImage() {
+            var image = document.getElementById("jpgImage");
+            var headerText = document.getElementById("headerText");
+            if (currentIndex >= jpgUrls.length) {
+                window.location.href = "reinevalentine.html"; // Redirect to end page if all images have been displayed
+                return;
+            }
+            image.src = jpgUrls[currentIndex];
+            headerText.textContent = headerTexts[currentIndex];
+            currentIndex++;
+        }
+
+        function yesPage() {
+            window.location.href = "yes.html";
+        }
+
+        function noPage() {
+            changeImage();
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <h1 class="header_text" id="headerText">Um im confused</h1>
+        </div>
+        <br>
+        <div class="image_container">
+            <img id="jpgImage" src="spongebob7.jpg" alt="Spongebob Image">
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="buttons">
+            <button class="btn" id="yesButton" onclick="yesPage()">Yes</button>
+            <button class="btn" id="noButton" onclick="noPage()">No</button>
+        </div>
+    </div>
+</body>
+</html>
